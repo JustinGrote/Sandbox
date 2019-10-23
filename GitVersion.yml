@@ -2,6 +2,7 @@
 
 branches:
   master:
+    mode: continuousDeployment
     tag: 'beta'
 
 #Custom commit messages to support Angular.js-style commit messages
