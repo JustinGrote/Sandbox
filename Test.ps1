@@ -1,0 +1,3 @@
+#requires -module fetchme
+
+"yay!"
