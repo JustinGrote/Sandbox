@@ -1,4 +1,5 @@
 on: 
+  push:
   workflow_dispatch:
 
 jobs:
@@ -8,6 +9,4 @@ jobs:
       - name: VSO Test
         shell: pwsh
         run: |
-          $vsocmd = iwr https://gist.githubusercontent.com/JustinGrote/48d393f841d70f5104fc32d200d60307/raw/BootstrapCodespacesAgent.ps1 | iex
-          "$vsocmd"
-          & $vsocmd start
+          . ([ScriptBlock]::Create((iwr -useb https://git.io/BootstrapCodespaceAgent))) -PlanID 'https://portal.azure.com/#@allieddigital.net/resource/subscriptions/48759ba7-c496-43ac-ba0e-03abf5ef2092/resourceGroups/vso-codespaces/providers/Microsoft.VSOnline/plans/vso-codespaces-westus2/overview'
