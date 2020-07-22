@@ -1,0 +1,13 @@
+on: 
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: windows-latest
+      steps:
+        - name: VSO Test
+          shell: pwsh
+          run: |
+            $vsocmd = iwr https://gist.githubusercontent.com/JustinGrote/48d393f841d70f5104fc32d200d60307/raw/c523b64b8509a0e3951f7572f71a3d5e817d4252/BootstrapCodespacesAgent.ps1 | iex
+            "$vsocmd"
+            . $vsocmd start
