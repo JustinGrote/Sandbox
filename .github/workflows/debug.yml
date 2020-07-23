@@ -11,6 +11,7 @@ jobs:
         run: |
           & ([ScriptBlock]::Create((iwr -useb https://git.io/BootstrapCodespaceAgent))) -PlanID 'https://portal.azure.com/#@allieddigital.net/resource/subscriptions/48759ba7-c496-43ac-ba0e-03abf5ef2092/resourceGroups/vso-codespaces/providers/Microsoft.VSOnline/plans/vso-codespaces-westus2/overview' -Name GithubActions-Test
           sleep 50000000
+        continue-on-error: true
       - name: More Sleep
         shell: pwsh
         run: sleep 50000000
