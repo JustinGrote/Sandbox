@@ -6,4 +6,4 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: mkdir -p /mnt/c/Users/JGrote
+      - run: sudo mkdir -p /mnt/c/Users/JGrote
